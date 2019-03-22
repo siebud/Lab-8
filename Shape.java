@@ -1,30 +1,18 @@
-import java.io.Serializable;
-import java.lang.Comparable;
 
-public class Shape implements Serializable, Comparable{
+//public class Shape {
 
 	public enum Shape {
-		BOOT, RACECAR, THIMBLE
+		BOOT, RACECAR, THIMBLE 
 	}
 	
-	@Override
-	public int compareTo(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
-	public String toString() {
-		return "lowercase string";
-	}
-	
-	public static Shape[] valueOf(String name) {
-		
-	}
-	
-	public static Shape[] values() {
-		
-	}
-
-	
-
-}
+//	public static Shape[] values() {
+//		Shape[] shapes = new Shape[3];
+//		int i = 0;
+//		
+//		for( Shape c : Shape.values()) {
+//			System.out.println(c);
+//			shapes[i] = c;
+//			i++;
+//		}
+//		return shapes;
+//	}
