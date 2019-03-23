@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class BoardGame {
@@ -47,15 +49,23 @@ public class BoardGame {
 	
 	public ArrayList<String> getPlayersAtLocation(Location loc){
 		ArrayList<String> ans = new ArrayList<String>();
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-		System.out.println(playerLocations.get(loc));
+		Set<Entry<String, Location>> locs = playerLocations.entrySet();
+		for(Entry<String, Location> entry : locs) {
+			if (entry.getValue().equals(loc)) {
+				ans.add(entry.getKey());
+			}
+		}
 		return ans;
 	}
 	
 	public ArrayList<GamePiece> getGamePiecesAtLocation(Location loc){
 		ArrayList<GamePiece> ans = new ArrayList<GamePiece>();
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA	
+		Set<Entry<String, Location>> locs = playerLocations.entrySet();
+		for(Entry<String, Location> entry : locs) {
+			if (entry.getValue().equals(loc)) {
+				ans.add(getPlayerGamePiece(entry.getKey()));
+			}
+		}
 		return ans;
 	}
 	
