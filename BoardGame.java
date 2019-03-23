@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Set;
 
@@ -23,7 +24,7 @@ public class BoardGame {
 	}
 	
 	public String getPlayerWithGamePiece(GamePiece gamePiece) {
-		return playerPieces.get(gamePiece).name();
+		return gamePiece.name();
 	}
 	
 	public void movePlayer(String playerName, Location newLocation) {
@@ -63,11 +64,15 @@ public class BoardGame {
 	}
 	
 	public Set<Location> getPlayerLocations() {
-		return (Set<Location>)playerLocations.values();
+		Set<Location> ans = new HashSet<>();
+		ans.addAll(playerLocations.values());
+		return ans;
 	}
 	
 	public Set<GamePiece> getPlayerPieces(){
-		return (Set<GamePiece>)playerPieces.values();
+		Set<GamePiece> ans = new HashSet<>();
+		ans.addAll(playerPieces.values());
+		return ans;
 	}
 
 }
