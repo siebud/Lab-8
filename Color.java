@@ -1,6 +1,17 @@
 
 public enum Color {
-	RED, GREEN, BLUE, YELLOW, CYAN, MAGENTA;
+	RED (225,0,0), 
+	GREEN (0,225,0), 
+	BLUE (0,0,225), 
+	YELLOW (225, 225, 0), 
+	CYAN (0,225,225), 
+	MAGENTA(225, 0, 225);
+	
+	Color(int r, int g,int b){
+		this.r = r;
+		this.g = g;
+		this.b = b;
+	}
 	
 	private int b;
 	private int g;
@@ -18,5 +29,4 @@ public enum Color {
 	public int getB() {
 		return b;
 	}
-	
 }
