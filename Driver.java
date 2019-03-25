@@ -19,6 +19,10 @@ public class Driver {
 		clue.movePlayer("Brian",  Location.LIBRARY);
 		System.out.println(clue.getPlayerLocations());
 		
+		clue.moveTwoPlayers(new String[] {"Josh",  "Ryan"}, new Location[] {Location.BILLIARD_ROOM, Location.LOUNGE});
+		System.out.println(clue.getPlayerLocations());
+		
+		System.out.println(clue.getPlayers());
 
 	}
 

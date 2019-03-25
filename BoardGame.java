@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -15,10 +14,10 @@ public class BoardGame {
 	}
 	
 	public boolean addPlayer(String playerName, GamePiece gamePiece, Location initialLocation) {
-		String plname = playerName;
-		playerPieces.put(plname, gamePiece);
-		playerLocations.put(plname, initialLocation);
-		return !playerPieces.containsValue(plname);
+		boolean answer = playerPieces.containsKey(playerName);
+		playerPieces.put(playerName, gamePiece);
+		playerLocations.put(playerName, initialLocation);
+		return !answer;
 	}
 	
 	public GamePiece getPlayerGamePiece(String playerName) {
@@ -26,7 +25,8 @@ public class BoardGame {
 	}
 	
 	public String getPlayerWithGamePiece(GamePiece gamePiece) {
-		return gamePiece.name();
+		String[] nam = playerPieces.entrySet().toString().split("=");
+		return nam[0].substring(1);
 	}
 	
 	public void movePlayer(String playerName, Location newLocation) {
@@ -40,7 +40,7 @@ public class BoardGame {
 		GamePiece second = getPlayerGamePiece(playerNames[1]);
 
 
-		if(first.equals(first.movesFirst(first, second))) {
+		if(!first.equals(first.movesFirst(first, second))) {
 			ans[0] =(playerNames[0]);
 			ans[1] =(playerNames[1]);
 			movePlayer(playerNames[0], newLocations[0]);
