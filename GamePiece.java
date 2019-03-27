@@ -6,7 +6,7 @@ public enum GamePiece {
 	RED_THIMBLE(new GamePieceAppearance(Color.RED, Shape.THIMBLE), 10),
 	BLUE_BOOT(new GamePieceAppearance(Color.BLUE, Shape.BOOT), 5),
 	GREEN_BOOT(new GamePieceAppearance(Color.GREEN, Shape.BOOT), 8),
-	YELLLOW_BOOT(new GamePieceAppearance(Color.YELLOW, Shape.BOOT), 7);
+	YELLOW_BOOT(new GamePieceAppearance(Color.YELLOW, Shape.BOOT), 7);
 	
 	private GamePieceAppearance appearance;
 	private int priority;
@@ -24,7 +24,7 @@ public enum GamePiece {
 		return appearance.getShape();
 	}
 	
-	public GamePiece movesFirst(GamePiece a, GamePiece b) {
+	public static GamePiece movesFirst(GamePiece a, GamePiece b) {
 		if(a.priority < b.priority) {
 			return a;
 		}

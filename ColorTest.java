@@ -15,34 +15,34 @@ public class ColorTest {
 		
 		Color col = null;
 		col = Color.RED;
-		Assert.assertEquals("Wrong red value", 225, col.getR());
+		Assert.assertEquals("Wrong red value", 255, col.getR());
 		Assert.assertEquals("Wrong green value", 0, col.getG());
 		Assert.assertEquals("Wrong blue value", 0, col.getB());
 		
 		col = Color.GREEN;
 		Assert.assertEquals("Wrong red value", 0, col.getR());
-		Assert.assertEquals("Wrong green value", 225, col.getG());
+		Assert.assertEquals("Wrong green value", 255, col.getG());
 		Assert.assertEquals("Wrong blue value", 0, col.getB());
 		
 		col = Color.BLUE;
 		Assert.assertEquals("Wrong red value", 0, col.getR());
 		Assert.assertEquals("Wrong green value", 0, col.getG());
-		Assert.assertEquals("Wrong blue value", 225, col.getB());
+		Assert.assertEquals("Wrong blue value", 255, col.getB());
 		
 		col = Color.YELLOW;
-		Assert.assertEquals("Wrong red value", 225, col.getR());
-		Assert.assertEquals("Wrong green value", 225, col.getG());
+		Assert.assertEquals("Wrong red value", 255, col.getR());
+		Assert.assertEquals("Wrong green value", 255, col.getG());
 		Assert.assertEquals("Wrong blue value", 0, col.getB());
 		
 		col = Color.CYAN;
 		Assert.assertEquals("Wrong red value", 0, col.getR());
-		Assert.assertEquals("Wrong green value", 225, col.getG());
-		Assert.assertEquals("Wrong blue value", 225, col.getB());
+		Assert.assertEquals("Wrong green value", 255, col.getG());
+		Assert.assertEquals("Wrong blue value", 255, col.getB());
 		
 		col = Color.MAGENTA;
-		Assert.assertEquals("Wrong red value", 225, col.getR());
+		Assert.assertEquals("Wrong red value", 255, col.getR());
 		Assert.assertEquals("Wrong green value", 0, col.getG());
-		Assert.assertEquals("Wrong blue value", 225, col.getB());
+		Assert.assertEquals("Wrong blue value", 255, col.getB());
 	}
 
 }

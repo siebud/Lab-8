@@ -14,9 +14,11 @@ public class BoardGame {
 	}
 	
 	public boolean addPlayer(String playerName, GamePiece gamePiece, Location initialLocation) {
-		boolean answer = playerPieces.containsKey(playerName);
-		playerPieces.put(playerName, gamePiece);
-		playerLocations.put(playerName, initialLocation);
+		boolean answer = playerPieces.keySet().contains(playerName);
+		if(!answer) {
+			playerPieces.put(playerName, gamePiece);
+			playerLocations.put(playerName, initialLocation);
+		}
 		return !answer;
 	}
 	
@@ -25,8 +27,19 @@ public class BoardGame {
 	}
 	
 	public String getPlayerWithGamePiece(GamePiece gamePiece) {
-		String[] nam = playerPieces.entrySet().toString().split("=");
-		return nam[0].substring(1);
+		String[] nam = playerPieces.entrySet().toString().split(" ");
+		for(int i = 0; i < nam.length; i++) {
+			String[] name = nam[i].split("=");
+			for(int j = 0; j<name.length; j++) {
+				if(name[j].substring(0,name[j].length()-1).equals(gamePiece.name())) {
+					if("[".equals(name[0].substring(0,1))) {
+						return name[0].substring(1);
+					}
+					return name[0];
+					}			
+				}
+		}
+		return "none";
 	}
 	
 	public void movePlayer(String playerName, Location newLocation) {
@@ -40,7 +53,7 @@ public class BoardGame {
 		GamePiece second = getPlayerGamePiece(playerNames[1]);
 
 
-		if(!first.equals(first.movesFirst(first, second))) {
+		if(first.equals(first.movesFirst(first, second))) {
 			ans[0] =(playerNames[0]);
 			ans[1] =(playerNames[1]);
 			movePlayer(playerNames[0], newLocations[0]);
@@ -53,7 +66,9 @@ public class BoardGame {
 			movePlayer(playerNames[0], newLocations[0]);
 		}
 			
-		
+		for(String i: ans) {
+			System.out.println(i);
+		}
 		return ans;
 	}
 	
