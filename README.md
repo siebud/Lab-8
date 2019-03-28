@@ -27,3 +27,5 @@ methods.  After that there were many formatting and casting issues that I had to
 and would correctly compare. I did learn much more about HashMaps and how to use their methods in these classes. I 
 struggled a bit with the put() method because of the fact that I had to be using Integers instead of ints, but eventually
 it became easier to know how to call methods and cast in such a way that it would be effective.
+
+Class list: Main, MesoAscii, MesoAsciiAbstract, MesoEqual, MesoSortedAbstract, MesoStation, StationLexicographical
