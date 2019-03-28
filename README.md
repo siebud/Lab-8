@@ -29,3 +29,12 @@ struggled a bit with the put() method because of the fact that I had to be using
 it became easier to know how to call methods and cast in such a way that it would be effective.
 
 Class list: Main, MesoAscii, MesoAsciiAbstract, MesoEqual, MesoSortedAbstract, MesoStation, StationLexicographical
+
+MesoStation
+This public class initializes and saves the ID data for a station, as well as providing methods to access this data.
+
+MesoAsciiAbstract
+This is an abstract class that has one required method, a calAverage method with no parameters that returns an int.
+
+MesoSortedAbstract
+This is an abstract class that has one required method, a sortedMap method with parameter of a HashMap with String and Integer values. The return type for sortedMap is a Map with String and Integer values.
